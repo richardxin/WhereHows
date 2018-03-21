@@ -146,11 +146,11 @@ POST          /api/v1/datasets/:id/watch                                        
 
 DELETE        /api/v1/datasets/:id/watch/:watchId                               controllers.api.v1.Dataset.unwatchDataset(id:Int, watchId:Int)
 
-# GET           /api/v1/datasets/:id/compliance                                   controllers.api.v1.Dataset.getDatasetCompliance(id:Int)
+GET           /api/v1/datasets/:id/compliance                                   controllers.api.v1.Dataset.getDatasetCompliance(id:Int)
 
-# POST          /api/v1/datasets/:id/compliance                                   controllers.api.v1.Dataset.updateDatasetCompliance(id:Int)
+POST          /api/v1/datasets/:id/compliance                                   controllers.api.v1.Dataset.updateDatasetCompliance(id:Int)
 
-# GET           /api/v1/datasets/:id/compliance/suggestions                       controllers.api.v1.Dataset.getDatasetSuggestedCompliance(id:Int)
+GET           /api/v1/datasets/:id/compliance/suggestions                       controllers.api.v1.Dataset.getDatasetSuggestedCompliance(id:Int)
 
 GET           /api/v1/urn/watch                                                 controllers.api.v1.Dataset.getWatchedUrnId()
 
@@ -234,7 +234,7 @@ GET           /api/v1/metadata/dashboard/confidential/:managerId                
 
 GET           /api/v1/metadata/dashboard/description/:managerId                 controllers.api.v1.Dashboard.getDescriptionDatasetsPercentage(managerId: String)
 
-# GET           /api/v1/metadata/dashboard/compliance/:managerId                  controllers.api.v1.Dashboard.getIdpcComplianceDatasetsPercentage(managerId: String)
+GET           /api/v1/metadata/dashboard/compliance/:managerId                  controllers.api.v1.Dashboard.getIdpcComplianceDatasetsPercentage(managerId: String)
 
 GET           /api/v1/metadata/dataset/ownership/:managerId                     controllers.api.v1.Dashboard.getPagedOwnershipDatasets(managerId: String)
 
@@ -242,7 +242,7 @@ GET           /api/v1/metadata/dataset/confidential/:managerId                  
 
 GET           /api/v1/metadata/dataset/description/:managerId                   controllers.api.v1.Dashboard.getPagedDescriptionDatasets(managerId: String)
 
-# GET           /api/v1/metadata/dataset/compliance/:managerId                    controllers.api.v1.Dashboard.getPagedComplianceDatasets(managerId: String)
+GET           /api/v1/metadata/dataset/compliance/:managerId                    controllers.api.v1.Dashboard.getPagedComplianceDatasets(managerId: String)
 
 GET           /api/v1/metadata/barchart/ownership/:managerId                    controllers.api.v1.Dashboard.getOwnershipBarData(managerId: String)
 
