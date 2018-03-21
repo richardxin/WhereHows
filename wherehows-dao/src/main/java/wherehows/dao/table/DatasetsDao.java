@@ -57,26 +57,26 @@ public class DatasetsDao {
 
   private static final String GET_DATASAT_COMPLIANCE_BY_DATASET_ID =
       "SELECT dataset_id, dataset_urn, compliance_purge_type, compliance_entities, confidentiality, "
-          + "dataset_classification, record_owner_type, retention_policy, "
+          + "dataset_classification, field_classification, record_owner_type, retention_policy, "
           + "geographic_affinity, modified_by, modified_time "
           + "FROM dataset_compliance WHERE dataset_id = ?";
 
   private static final String GET_DATASET_COMPLIANCE_BY_URN =
       "SELECT dataset_id, dataset_urn, compliance_purge_type, compliance_entities, confidentiality, "
-          + "dataset_classification, record_owner_type, retention_policy, "
+          + "dataset_classification, field_classification, record_owner_type, retention_policy, "
           + "geographic_affinity, modified_by, modified_time "
           + "FROM dataset_compliance WHERE dataset_urn = ?";
 
   private static final String INSERT_DATASET_COMPLIANCE =
       "INSERT INTO dataset_compliance (dataset_id, dataset_urn, compliance_purge_type, compliance_entities, "
-          + "confidentiality, dataset_classification, record_owner_type, retention_policy, "
+          + "confidentiality, dataset_classification, field_classification, record_owner_type, retention_policy, "
           + "geographic_affinity, modified_by, modified_time) "
           + "VALUES (:id, :urn, :compliance_type, :compliance_entities, :confidentiality, :dataset_classification, "
-          + ":ownerType, :policy, :geo, :modified_by, :modified_time) "
+          + ":field_classification, :ownerType, :policy, :geo, :modified_by, :modified_time) "
           + "ON DUPLICATE KEY UPDATE "
           + "compliance_purge_type = :compliance_type, compliance_entities = :compliance_entities, "
           + "confidentiality = :confidentiality, dataset_classification = :dataset_classification, "
-          + "record_owner_type = :ownerType, retention_policy = :policy, "
+          + "field_classification = :field_classification, record_owner_type = :ownerType, retention_policy = :policy, "
           + "geographic_affinity = :geo, modified_by = :modified_by, modified_time = :modified_time";
 
   /**
@@ -196,7 +196,7 @@ public class DatasetsDao {
         jsonToTypedObject((String) result.get("dataset_classification"), new TypeReference<Map<String, Object>>() {
         }));
     record.setFieldClassification(
-        jsonToTypedObject("", new TypeReference<Map<String, String>>() {
+        jsonToTypedObject((String) result.get("field_classification"), new TypeReference<Map<String, String>>() {
         }));
     record.setRecordOwnerType((String) result.get("record_owner_type"));
     record.setRetentionPolicy(
