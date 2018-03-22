@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "dataset_classification")
+@Table(name = "dataset_schema_info")
 @NoArgsConstructor
 @AllArgsConstructor
 public class DatasetSchemaInfo {
