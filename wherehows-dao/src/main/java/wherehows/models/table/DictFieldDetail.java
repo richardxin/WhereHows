@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "dataset_classification")
+@Table(name = "dict_field_detail")
 @NoArgsConstructor
 @AllArgsConstructor
 public class DictFieldDetail {
