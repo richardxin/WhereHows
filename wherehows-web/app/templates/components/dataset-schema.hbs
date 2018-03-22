@@ -30,9 +30,10 @@
       <th title="Is partitioned" style="width:15px;">P</th>
       <th title="Is distributed" style="width:15px;">D</th>
       <th class="col-xs-7"> Default Comments</th>
+      <!--
       <th title="Comment Count" style="width:15px;">
         <i class="fa fa-comments" title="Comment Count"></i>
-      </th>
+      </th>-->
     </tr>
     </thead>
     <tbody>
@@ -63,12 +64,14 @@
         <td class="commentsArea">
           <div class="commentsArea">
             {{#schema-comment schema=schema datasetId=dataset.id fieldId=schema.id}}{{/schema-comment}}
-            {{schema.commentHtml}}
+            <!-- {{schema.commentHtml}} -->
           </div>
         </td>
+        <!--
         <td class="text-center">
           {{schema.commentCount}}
         </td>
+        -->
       </tr>
     {{/each}}
     </tbody>
