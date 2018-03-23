@@ -146,9 +146,10 @@
         },
         "urn": {
           "type": "string"
-        }
-      }
-    },
+        },
+        "db_id": {
+          "type": "string"
+        },
     "field": {
       "_parent": {
         "type": "dataset"
