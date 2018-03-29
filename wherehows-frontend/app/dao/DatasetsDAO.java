@@ -759,7 +759,7 @@ public class DatasetsDAO extends AbstractMySQLOpenSourceDAO
 		{
 			if (userId != null && userId > 0)
 			{
-				dataset = getJdbcTemplate().queryForObject(GET_DATASET_BY_ID_CURRENT_USER, new DatasetWithUserRowMapper(),
+				dataset = getJdbcTemplate().queryForObject(GET_DATASET_BY_ID_CURRENT_USER, new DatasetWithUserRowMapper(user),
 						userId,	userId, id);
 			}
 			else
