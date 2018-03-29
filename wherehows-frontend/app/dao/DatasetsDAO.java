@@ -146,7 +146,7 @@ public class DatasetsDAO extends AbstractMySQLOpenSourceDAO
 			"GROUP_CONCAT(IFNULL(u.display_name, '*') ORDER BY o.sort_id ASC SEPARATOR ',') as owner_name, " +
 			"GROUP_CONCAT(IFNULL(u.email, '*') ORDER BY o.sort_id ASC SEPARATOR ',') as owner_email, " +
 			"FROM_UNIXTIME(d.source_created_time) as created, " +
-			"d.source_modified_time, d.db_id, di.zeppelin_host " +
+			"d.source_modified_time, d.db_id, di.zeppelin_host, " +
 			"FROM_UNIXTIME(d.source_modified_time) as modified, f.dataset_id, w.id as watch_id FROM dict_dataset d " +
 			"INNER JOIN db_info di ON (d.db_id = di.db_id) " +
 			"LEFT JOIN favorites f ON (d.id = f.dataset_id and f.user_id = ?) " +
