@@ -134,7 +134,7 @@ public class DatasetWithUserRowMapper implements RowMapper<Dataset>
 
         dataset.hasSchemaHistory = schemaHistoryId != null && schemaHistoryId > 0;
         dataset.db_id = db_id;
-        dataset.user_name = this.user_name;
+        dataset.user_name = this.username;
         dataset.zeppelin_host = zeppelin_host;
 
         return dataset;
