@@ -36,5 +36,6 @@ public class Dataset {
     public boolean hasSchemaHistory;
     public JsonNode properties;
     public List<User> owners;
+    public String db_id;
 
 }

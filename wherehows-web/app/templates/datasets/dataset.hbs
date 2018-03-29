@@ -11,7 +11,7 @@
 
     <div class="row">
       <div class="col-xs-5">
-        <h3>{{ model.name }} hello</h3>
+        <h3>{{ model.name }}  {{model.db_id}}</h3>
       </div>
       <div class="col-xs-7 text-right">
         <ul class="datasetDetailsLinks">
@@ -121,13 +121,13 @@
     {{#unless isPinot}}
       <li id="properties">
         <a data-toggle="tab" href="#propertiestab">
-          Properties1
+          Properties
         </a>
       </li>
     {{/unless}}
     <li id="properties">
       <a data-toggle="tab" href="#commentstab">
-        Comments1
+        Comments
       </a>
     </li>
     <li id="schemas"><a data-toggle="tab" href="#schematab">Schema</a></li>
