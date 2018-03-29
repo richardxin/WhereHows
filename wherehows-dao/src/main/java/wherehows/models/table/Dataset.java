@@ -37,5 +37,6 @@ public class Dataset {
     public JsonNode properties;
     public List<User> owners;
     public String db_id;
-
+    public String user_name; // TODO: temporarily store user_name for the current session, will remove later
+    public String zeppelin_host; /
 }
