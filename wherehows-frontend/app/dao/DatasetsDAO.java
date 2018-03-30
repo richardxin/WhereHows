@@ -741,6 +741,7 @@ public class DatasetsDAO extends AbstractMySQLOpenSourceDAO
 
 	public static Dataset getDatasetByID(int id, String user)
 	{
+		Logger.info("==== GET_DATASET_BY_ID ====" + GET_DATASET_BY_ID);
 		Dataset dataset = null;
 		Integer userId = 0;
 		if (StringUtils.isNotBlank(user))
@@ -759,9 +760,10 @@ public class DatasetsDAO extends AbstractMySQLOpenSourceDAO
 		{
 			if (userId != null && userId > 0)
 			{
-				Logger.info("useruser=" + user);
-				dataset = getJdbcTemplate().queryForObject(GET_DATASET_BY_ID_CURRENT_USER, new DatasetWithUserRowMapper(user),
+				Logger.info("useruser=" + userId);
+				dataset = getJdbcTemplate().queryForObject(GET_DATASET_BY_ID_CURRENT_USER, new DatasetWithUserRowMapper(),
 						userId,	userId, id);
+				dataset.user_name = user;
 			}
 			else
 			{
