@@ -68,6 +68,7 @@ public class BaseDao {
     criteria.select(entityRoot);
     criteria.where(cb.equal(entityRoot.get(criteriaKey), criteriaValue));
     try {
+      System.out.println("===============getSingleResult getSingleResult ====================");
       return entityManager.createQuery(criteria).getSingleResult();
     } finally {
       entityManager.close();
