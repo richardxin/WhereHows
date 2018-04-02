@@ -200,10 +200,12 @@ public class SearchDAO extends AbstractMySQLOpenSourceDAO
     }
 
     Logger.info("The completion suggester query sent to Elastic Search is: " + keywordNode.toString());
+    Logger.info("Elastic URL: " + Play.application().configuration().getString(elasticSearchTypeURLKey));
 
     Promise<WSResponse> responsePromise =
         WS.url(Play.application().configuration().getString(elasticSearchTypeURLKey)).post(keywordNode);
     responseNode = responsePromise.get(1000).asJson();
+    Logger.info("responseNode : " + responsePromise.get(1000).asJson());
 
     if (responseNode == null || !responseNode.isContainerNode()) {
       return completionSuggestionList;
