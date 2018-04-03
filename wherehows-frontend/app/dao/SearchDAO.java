@@ -205,7 +205,7 @@ public class SearchDAO extends AbstractMySQLOpenSourceDAO
     Promise<WSResponse> responsePromise =
         WS.url(Play.application().configuration().getString(elasticSearchTypeURLKey)).post(keywordNode);
     responseNode = responsePromise.get(1000).asJson();
-    Logger.info("responseNode : " + responsePromise.get(1000).asJson());
+    Logger.info("responseNode : " + responseNode.toString());
 
     if (responseNode == null || !responseNode.isContainerNode()) {
       return completionSuggestionList;
