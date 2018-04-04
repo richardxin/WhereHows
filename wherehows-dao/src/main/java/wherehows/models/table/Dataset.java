@@ -39,4 +39,5 @@ public class Dataset {
     public String db_id;
     public String user_name; // TODO: temporarily store user_name for the current session, will remove later
     public String proxy_host;
+    public String parent_name;
 }
